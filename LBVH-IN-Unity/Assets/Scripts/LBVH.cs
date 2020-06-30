@@ -47,7 +47,7 @@ public class LBVH
                         morton = (uint)m,
                         min = min,
                         max = max,
-                        color = new Vector4(k / 10.0f, j / 10.0f, i / 10.0f, 0.5f),
+                        color = new Vector4(k / (float)x, j / (float)y, i / (float)z, 0.5f),
                         index = new Vector3(k, j, i)
                     });
                 }

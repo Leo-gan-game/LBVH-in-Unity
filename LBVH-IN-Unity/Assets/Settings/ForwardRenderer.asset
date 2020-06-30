@@ -16,10 +16,12 @@ MonoBehaviour:
   setting:
     cs: {fileID: 7200000, guid: e755380e3115383488336728106b7086, type: 3}
     kernelName: CSMain
-    size: {x: 4, y: 4, z: 4}
+    size: {x: 10, y: 10, z: 10}
     mtlDebugCS: {fileID: 2100000, guid: 4a864a29ffa40c347980b8aeca050665, type: 2}
     debug: 1
-    csPassEvent: 0
+    showConstructProcess: 1
+    interval: 100
+    csPassEvent: 200
     debugPassEvent: 300
 --- !u!114 &11400000
 MonoBehaviour:
