@@ -1,0 +1,26 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+struct ComputeShaderInput
+{
+    uint3 GroupID : SV_GroupID; // 3D index of the thread group in the dispatch.
+    uint3 GroupThreadID : SV_GroupThreadID; // 3D index of local thread ID in a thread group.
+    uint3 DispatchThreadID : SV_DispatchThreadID; // 3D index of global thread ID in the dispatch.
+    uint GroupIndex : SV_GroupIndex; // Flattened local index of the thread within a thread group.
+};
+
+struct AABB
+{
+    int morton;
+    float4 min;
+    float4 max;
+};
+RWTexture2D<float4> Result;
+RWStructuredBuffer<AABB> buffer;
+int3 size;
+
+[numthreads(32,16,1)]
+void CSMain(ComputeShaderInput input )
+{
+    Result[float2(input.DispatchThreadID.x + (input.DispatchThreadID.z % 3 * 320), input.DispatchThreadID.y + (input.DispatchThreadID.z / 3 * 160))] = (input.GroupID.x + input.GroupID.y * 10+ input.GroupID.z * 100) / 1000.0; //float4(input.GroupID.x / 10.0, input.GroupID.y / 10.0, input.GroupID.z / 10.0, 0);
+}

@@ -1,0 +1,9 @@
+LBVH-IN-Unity/Temp/
+LBVH-IN-Unity/ProjectSettings/
+LBVH-IN-Unity/Library/ShaderCache/
+LBVH-IN-Unity/Library/
+LBVH-IN-Unity/obj/
+*.sln
+*.csproj
+LBVH-IN-Unity/.vs/
+*.log
