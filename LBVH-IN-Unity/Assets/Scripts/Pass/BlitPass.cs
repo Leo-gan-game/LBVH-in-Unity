@@ -34,7 +34,7 @@ public class BlitPass : ScriptableRenderPass
         lastTime = DateTime.Now.ToUniversalTime().Ticks / 10000;
         if (deltatime > 1000)
         {
-            currentDrawCount = Mathf.Max(1, (currentDrawCount + 1) % drawAABBCount);
+            currentDrawCount = Mathf.Max(1, (currentDrawCount + 1) % (drawAABBCount+1));
             deltatime = 0;
         }
         using (new ProfilingScope(cmd, profilingSampler))
